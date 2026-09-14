@@ -1,6 +1,10 @@
 // One greeting: an opening pass, then scroll-driven particles in the same section.
 (() => {
   'use strict';
+  // Keep section labels calm and editorial by removing numeric prefixes from their visible text.
+  document.querySelectorAll('.eyebrow').forEach(label => {
+    label.textContent = label.textContent.replace(/^\s*\d+\s*\/\s*/, '');
+  });
   const root = document.documentElement;
   const hero = document.querySelector('.intro-screen');
   const stage = document.querySelector('.hello-stage');
